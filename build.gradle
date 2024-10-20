@@ -1,0 +1,95 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    id 'org.sonatype.gradle.plugins.scan' version '2.8.3'
+}
+
+group = 'io.github.kamilszewc'
+version = '0.1'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                if (project.properties.containsKey('mavenCentralTokenUser')) {
+                    username = "$mavenCentralTokenUser"
+                }
+                if (project.properties.containsKey('mavenCentralTokenPassword')) {
+                    password = "$mavenCentralTokenPassword"
+                }
+            }
+        }
+    }
+    publications {
+
+        mavenJava(MavenPublication) {
+            artifactId = 'java-quantities-library'
+            from components.java
+            pom {
+                name = 'Java quantities library'
+                description = 'Java quantities library'
+                url = 'https://github.com/kamilszewc/java-quantities-library'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'kszewc'
+                        name = "Kamil Szewc"
+                        email = 'kamil.szewc@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/kamilszewc/java-quantities-library.git'
+                    developerConnection = 'scm:git:https://github.com/kamilszewc/java-quantities-library.git'
+                    url = 'https://github.com/kamilszewc/java-quantities-library.git'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    useGpgCmd()
+    sign publishing.publications.mavenJava
+    sign configurations.archives
+}
+
+ossIndexAudit {
+    allConfigurations = false
+    useCache = false
+    outputFormat = 'DEFAULT'
+}
