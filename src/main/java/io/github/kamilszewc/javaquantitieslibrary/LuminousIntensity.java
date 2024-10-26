@@ -26,20 +26,20 @@ public class LuminousIntensity {
         return value;
     }
 
-    public LuminousIntensity add(LuminousIntensity luminousIntensityA, LuminousIntensity luminousIntensityB) {
-        return new LuminousIntensity(luminousIntensityA.value + luminousIntensityB.value, Unit.CD);
+    public LuminousIntensity add(LuminousIntensity luminousIntensity) {
+        return new LuminousIntensity(this.value + luminousIntensity.value, Unit.CD);
     }
 
-    public LuminousIntensity sub(LuminousIntensity luminousIntensityA, LuminousIntensity luminousIntensityB) {
-        return new LuminousIntensity(luminousIntensityA.value - luminousIntensityB.value, Unit.CD);
+    public LuminousIntensity sub(LuminousIntensity luminousIntensity) {
+        return new LuminousIntensity(this.value - luminousIntensity.value, Unit.CD);
     }
 
-    public LuminousIntensity mul(LuminousIntensity luminousIntensityA, LuminousIntensity luminousIntensityB) {
-        return new LuminousIntensity(luminousIntensityA.value * luminousIntensityB.value, Unit.CD);
+    public LuminousIntensity mul(LuminousIntensity luminousIntensity) {
+        return new LuminousIntensity(this.value * luminousIntensity.value, Unit.CD);
     }
 
-    public LuminousIntensity div(LuminousIntensity luminousIntensityA, LuminousIntensity luminousIntensityB) {
-        return new LuminousIntensity(luminousIntensityA.value / luminousIntensityB.value, Unit.CD);
+    public LuminousIntensity div(LuminousIntensity luminousIntensity) {
+        return new LuminousIntensity(this.value / luminousIntensity.value, Unit.CD);
     }
 
     @Override

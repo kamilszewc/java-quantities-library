@@ -49,29 +49,29 @@ public class Length {
         }
     }
 
-    public Length sub(Length lengthA, Length lengthB) {
-        switch (lengthA.unit) {
-            case M: return new Length(lengthA.value - lengthB.getM(), Unit.M);
-            case CM: return new Length(lengthA.value - lengthB.getCm(), Unit.CM);
-            case KM: return new Length(lengthA.value - lengthB.getKm(), Unit.KM);
+    public Length sub(Length length) {
+        switch (this.unit) {
+            case M: return new Length(this.value - length.getM(), Unit.M);
+            case CM: return new Length(this.value - length.getCm(), Unit.CM);
+            case KM: return new Length(this.value - length.getKm(), Unit.KM);
             default: return null;
         }
     }
 
-    public Length mul(Length lengthA, Length lengthB) {
-        switch (lengthA.unit) {
-            case M: return new Length(lengthA.value * lengthB.getM(), Unit.M);
-            case CM: return new Length(lengthA.value * lengthB.getCm(), Unit.CM);
-            case KM: return new Length(lengthA.value * lengthB.getKm(), Unit.KM);
+    public Length mul(Length length) {
+        switch (this.unit) {
+            case M: return new Length(this.value * length.getM(), Unit.M);
+            case CM: return new Length(this.value * length.getCm(), Unit.CM);
+            case KM: return new Length(this.value * length.getKm(), Unit.KM);
             default: return null;
         }
     }
 
-    public Length div(Length lengthA, Length lengthB) {
-        switch (lengthA.unit) {
-            case M: return new Length(lengthA.value / lengthB.getM(), Unit.M);
-            case CM: return new Length(lengthA.value / lengthB.getCm(), Unit.CM);
-            case KM: return new Length(lengthA.value / lengthB.getKm(), Unit.KM);
+    public Length div(Length length) {
+        switch (this.unit) {
+            case M: return new Length(this.value / length.getM(), Unit.M);
+            case CM: return new Length(this.value / length.getCm(), Unit.CM);
+            case KM: return new Length(this.value / length.getKm(), Unit.KM);
             default: return null;
         }
     }

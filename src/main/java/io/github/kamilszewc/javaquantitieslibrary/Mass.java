@@ -40,38 +40,38 @@ public class Mass {
         else return value;
     }
 
-    public Mass add(Mass massA, Mass massB) {
-        switch (massB.unit) {
-            case KG: return new Mass(massA.value + massB.getKg(), Unit.KG);
-            case G: return new Mass(massA.value + massB.getG(), Unit.G);
-            case LBS: return new Mass(massA.value + massB.getLbs(), Unit.LBS);
+    public Mass add(Mass mass) {
+        switch (this.unit) {
+            case KG: return new Mass(this.value + mass.getKg(), Unit.KG);
+            case G: return new Mass(this.value + mass.getG(), Unit.G);
+            case LBS: return new Mass(this.value + mass.getLbs(), Unit.LBS);
             default: return null;
         }
     }
 
-    public Mass sub(Mass massA, Mass massB) {
-        switch (massB.unit) {
-            case KG: return new Mass(massA.value - massB.getKg(), Unit.KG);
-            case G: return new Mass(massA.value - massB.getG(), Unit.G);
-            case LBS: return new Mass(massA.value - massB.getLbs(), Unit.LBS);
+    public Mass sub(Mass mass) {
+        switch (this.unit) {
+            case KG: return new Mass(this.value - mass.getKg(), Unit.KG);
+            case G: return new Mass(this.value - mass.getG(), Unit.G);
+            case LBS: return new Mass(this.value - mass.getLbs(), Unit.LBS);
             default: return null;
         }
     }
 
-    public Mass mul(Mass massA, Mass massB) {
-        switch (massB.unit) {
-            case KG: return new Mass(massA.value * massB.getKg(), Unit.KG);
-            case G: return new Mass(massA.value * massB.getG(), Unit.G);
-            case LBS: return new Mass(massA.value * massB.getLbs(), Unit.LBS);
+    public Mass mul(Mass mass) {
+        switch (this.unit) {
+            case KG: return new Mass(this.value * mass.getKg(), Unit.KG);
+            case G: return new Mass(this.value * mass.getG(), Unit.G);
+            case LBS: return new Mass(this.value * mass.getLbs(), Unit.LBS);
             default: return null;
         }
     }
 
-    public Mass div(Mass massA, Mass massB) {
-        switch (massB.unit) {
-            case KG: return new Mass(massA.value / massB.getKg(), Unit.KG);
-            case G: return new Mass(massA.value / massB.getG(), Unit.G);
-            case LBS: return new Mass(massA.value / massB.getLbs(), Unit.LBS);
+    public Mass div(Mass mass) {
+        switch (this.unit) {
+            case KG: return new Mass(this.value / mass.getKg(), Unit.KG);
+            case G: return new Mass(this.value / mass.getG(), Unit.G);
+            case LBS: return new Mass(this.value / mass.getLbs(), Unit.LBS);
             default: return null;
         }
     }

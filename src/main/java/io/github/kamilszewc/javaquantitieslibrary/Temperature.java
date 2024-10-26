@@ -26,20 +26,20 @@ public class Temperature {
         return value;
     }
 
-    public Temperature add(Temperature temperatureA, Temperature temperatureB) {
-        return new Temperature(temperatureA.value + temperatureB.value, Unit.K);
+    public Temperature add(Temperature temperature) {
+        return new Temperature(this.value + temperature.value, Unit.K);
     }
 
-    public Temperature sub(Temperature temperatureA, Temperature temperatureB) {
-        return new Temperature(temperatureA.value - temperatureB.value, Unit.K);
+    public Temperature sub(Temperature temperature) {
+        return new Temperature(this.value - temperature.value, Unit.K);
     }
 
-    public Temperature mul(Temperature temperatureA, Temperature temperatureB) {
-        return new Temperature(temperatureA.value * temperatureB.value, Unit.K);
+    public Temperature mul(Temperature temperature) {
+        return new Temperature(this.value * temperature.value, Unit.K);
     }
 
-    public Temperature div(Temperature temperatureA, Temperature temperatureB) {
-        return new Temperature(temperatureA.value / temperatureB.value, Unit.K);
+    public Temperature div(Temperature temperature) {
+        return new Temperature(this.value / temperature.value, Unit.K);
     }
 
 

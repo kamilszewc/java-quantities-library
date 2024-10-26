@@ -26,20 +26,20 @@ public class ElectricCurrent {
         return value;
     }
 
-    public ElectricCurrent add(ElectricCurrent electricCurrentA, ElectricCurrent electricCurrentB) {
-        return new ElectricCurrent(electricCurrentA.value + electricCurrentB.value, Unit.A);
+    public ElectricCurrent add(ElectricCurrent electricCurrent) {
+        return new ElectricCurrent(this.value + electricCurrent.value, Unit.A);
     }
 
-    public ElectricCurrent sub(ElectricCurrent electricCurrentA, ElectricCurrent electricCurrentB) {
-        return new ElectricCurrent(electricCurrentA.value - electricCurrentB.value, Unit.A);
+    public ElectricCurrent sub(ElectricCurrent electricCurrent) {
+        return new ElectricCurrent(this.value - electricCurrent.value, Unit.A);
     }
 
-    public ElectricCurrent mul(ElectricCurrent electricCurrentA, ElectricCurrent electricCurrentB) {
-        return new ElectricCurrent(electricCurrentA.value * electricCurrentB.value, Unit.A);
+    public ElectricCurrent mul(ElectricCurrent electricCurrent) {
+        return new ElectricCurrent(this.value * electricCurrent.value, Unit.A);
     }
 
-    public ElectricCurrent div(ElectricCurrent electricCurrentA, ElectricCurrent electricCurrentB) {
-        return new ElectricCurrent(electricCurrentA.value / electricCurrentB.value, Unit.A);
+    public ElectricCurrent div(ElectricCurrent electricCurrent) {
+        return new ElectricCurrent(this.value / electricCurrent.value, Unit.A);
     }
 
     @Override

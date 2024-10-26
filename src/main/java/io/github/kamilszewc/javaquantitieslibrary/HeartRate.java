@@ -25,20 +25,20 @@ public class HeartRate {
         return value;
     }
 
-    public HeartRate add(HeartRate heartRateA, HeartRate heartRateB) {
-        return new HeartRate(heartRateA.value + heartRateB.value, Unit.COUNT_MIN);
+    public HeartRate add(HeartRate heartRate) {
+        return new HeartRate(this.value + heartRate.value, Unit.COUNT_MIN);
     }
 
-    public HeartRate sub(HeartRate heartRateA, HeartRate heartRateB) {
-        return new HeartRate(heartRateA.value - heartRateB.value, Unit.COUNT_MIN);
+    public HeartRate sub(HeartRate heartRate) {
+        return new HeartRate(this.value - heartRate.value, Unit.COUNT_MIN);
     }
 
-    public HeartRate mul(HeartRate heartRateA, HeartRate heartRateB) {
-        return new HeartRate(heartRateA.value * heartRateB.value, Unit.COUNT_MIN);
+    public HeartRate mul(HeartRate heartRate) {
+        return new HeartRate(this.value * heartRate.value, Unit.COUNT_MIN);
     }
 
-    public HeartRate div(HeartRate heartRateA, HeartRate heartRateB) {
-        return new HeartRate(heartRateA.value / heartRateB.value, Unit.COUNT_MIN);
+    public HeartRate div(HeartRate heartRate) {
+        return new HeartRate(this.value / heartRate.value, Unit.COUNT_MIN);
     }
 
     @Override

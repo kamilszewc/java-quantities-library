@@ -26,20 +26,20 @@ public class Energy {
         return value;
     }
 
-    public Energy add(Energy energyA, Energy energyB) {
-        return new Energy(energyA.value + energyB.value, Unit.KCAL);
+    public Energy add(Energy energy) {
+        return new Energy(this.value + energy.value, Unit.KCAL);
     }
 
-    public Energy sub(Energy energyA, Energy energyB) {
-        return new Energy(energyA.value - energyB.value, Unit.KCAL);
+    public Energy sub(Energy energy) {
+        return new Energy(this.value - energy.value, Unit.KCAL);
     }
 
-    public Energy mul(Energy energyA, Energy energyB) {
-        return new Energy(energyA.value * energyB.value, Unit.KCAL);
+    public Energy mul(Energy energy) {
+        return new Energy(this.value * energy.value, Unit.KCAL);
     }
 
-    public Energy div(Energy energyA, Energy energyB) {
-        return new Energy(energyA.value / energyB.value, Unit.KCAL);
+    public Energy div(Energy energy) {
+        return new Energy(this.value / energy.value, Unit.KCAL);
     }
 
     @Override

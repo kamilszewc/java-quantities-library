@@ -36,38 +36,38 @@ public class Time {
         else return value;
     }
 
-    public Time add(Time timeA, Time timeB) {
-        switch (timeA.unit) {
-            case S: return new Time(timeA.value + timeB.getS(), Unit.S);
-            case MIN: return new Time(timeA.value + timeB.getMin(), Unit.MIN);
-            case H: return new Time(timeA.value + timeB.getH(), Unit.H);
+    public Time add(Time time) {
+        switch (this.unit) {
+            case S: return new Time(this.value + time.getS(), Unit.S);
+            case MIN: return new Time(this.value + time.getMin(), Unit.MIN);
+            case H: return new Time(this.value + time.getH(), Unit.H);
             default: return null;
         }
     }
 
-    public Time sub(Time timeA, Time timeB) {
-        switch (timeA.unit) {
-            case S: return new Time(timeA.value - timeB.getS(), Unit.S);
-            case MIN: return new Time(timeA.value - timeB.getMin(), Unit.MIN);
-            case H: return new Time(timeA.value - timeB.getH(), Unit.H);
+    public Time sub(Time time) {
+        switch (this.unit) {
+            case S: return new Time(this.value - time.getS(), Unit.S);
+            case MIN: return new Time(this.value - time.getMin(), Unit.MIN);
+            case H: return new Time(this.value - time.getH(), Unit.H);
             default: return null;
         }
     }
 
-    public Time mul(Time timeA, Time timeB) {
-        switch (timeA.unit) {
-            case S: return new Time(timeA.value * timeB.getS(), Unit.S);
-            case MIN: return new Time(timeA.value * timeB.getMin(), Unit.MIN);
-            case H: return new Time(timeA.value * timeB.getH(), Unit.H);
+    public Time mul(Time time) {
+        switch (this.unit) {
+            case S: return new Time(this.value * time.getS(), Unit.S);
+            case MIN: return new Time(this.value * time.getMin(), Unit.MIN);
+            case H: return new Time(this.value * time.getH(), Unit.H);
             default: return null;
         }
     }
 
-    public Time div(Time timeA, Time timeB) {
-        switch (timeA.unit) {
-            case S: return new Time(timeA.value / timeB.getS(), Unit.S);
-            case MIN: return new Time(timeA.value / timeB.getMin(), Unit.MIN);
-            case H: return new Time(timeA.value / timeB.getH(), Unit.H);
+    public Time div(Time time) {
+        switch (this.unit) {
+            case S: return new Time(this.value / time.getS(), Unit.S);
+            case MIN: return new Time(this.value / time.getMin(), Unit.MIN);
+            case H: return new Time(this.value / time.getH(), Unit.H);
             default: return null;
         }
     }
